@@ -1,0 +1,30 @@
+{
+  "name": "identity-service",
+  "projectType": "application",
+  "sourceRoot": "apps/identity-service/src",
+  "implicitDependencies": ["proto"],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/identity-service",
+        "main": "apps/identity-service/src/main.ts",
+        "tsConfig": "apps/identity-service/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "external": ["@nestjs/*", "@grpc/*", "grpc", "rxjs"],
+        "esbuildConfig": "apps/identity-service/esbuild.config.js"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "node dist/apps/identity-service/main.cjs",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@nexusflow/monorepo",
+  "version": "1.0.0",
+  "description": "NexusFlow Microservices Monorepo",
+  "private": true,
+  "scripts": {
+    "build": "nx run-many -t build",
+    "build:affected": "nx affected -t build",
+    "serve:identity": "nx serve identity-service",
+    "serve:gateway": "nx serve nestjs-gateway",
+    "serve:project": "nx serve project-service",
+    "serve:notification": "nx serve notification-service"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.10",
+    "@nestjs/axios": "^3.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/microservices": "^10.0.0",
+    "@nestjs/passport": "^10.0.3",
+    "@nestjs/platform-express": "^10.0.0",
+    "axios": "^1.6.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "ioredis": "^5.3.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.0.0",
+    "@nx/esbuild": "^22.6.1",
+    "@nx/js": "^22.0.0",
+    "@nx/nest": "^22.0.0",
+    "@types/node": "^20.0.0",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/uuid": "^9.0.0",
+    "esbuild": "^0.27.4",
+    "esbuild-decorators": "^1.0.0",
+    "nx": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}

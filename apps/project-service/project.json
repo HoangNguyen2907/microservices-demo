@@ -1,0 +1,30 @@
+{
+  "name": "project-service",
+  "projectType": "application",
+  "sourceRoot": "apps/project-service/src",
+  "implicitDependencies": ["proto"],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/project-service",
+        "main": "apps/project-service/src/main.ts",
+        "tsConfig": "apps/project-service/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "external": ["@nestjs/*", "@grpc/*", "grpc", "rxjs"],
+        "esbuildConfig": "apps/project-service/esbuild.config.js"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "node dist/apps/project-service/main.cjs",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  }
+}

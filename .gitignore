@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+
+.nx/installation
+.nx/cache
+.nx/workspace-data
+.nx/polygraph

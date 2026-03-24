@@ -1,0 +1,30 @@
+{
+  "name": "nestjs-gateway",
+  "projectType": "application",
+  "sourceRoot": "apps/nestjs-gateway/src",
+  "implicitDependencies": ["proto"],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nestjs-gateway",
+        "main": "apps/nestjs-gateway/src/main.ts",
+        "tsConfig": "apps/nestjs-gateway/tsconfig.app.json",
+        "platform": "node",
+        "format": ["cjs"],
+        "bundle": true,
+        "external": ["@nestjs/*", "@grpc/*", "grpc", "rxjs"],
+        "esbuildConfig": "apps/nestjs-gateway/esbuild.config.js"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "command": "node dist/apps/nestjs-gateway/main.cjs",
+        "cwd": "{workspaceRoot}"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+.nx
+
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Tests
+coverage
+*.spec.ts
+*.test.ts
+
+# Misc
+.DS_Store
+*.md
+!README.md

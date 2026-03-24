@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@nexusflow/proto": [
+        "libs/proto/src/index.ts"
+      ],
+      "rxjs": [
+        "node_modules/rxjs"
+      ],
+      "proto": [
+        "dist/libs/proto"
+      ]
+    }
+  },
+  "extends": "../../../../apps/identity-service/tsconfig.app.json"
+}

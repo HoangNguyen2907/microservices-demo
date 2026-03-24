@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./apps/identity-service" },
+    { "path": "./apps/nestjs-gateway" },
+    { "path": "./apps/project-service" },
+    { "path": "./apps/notification-service" },
+    { "path": "./libs/proto" }
+  ]
+}
